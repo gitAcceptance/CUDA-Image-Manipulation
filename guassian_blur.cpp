@@ -16,11 +16,21 @@ Mat guassian_blur(Mat image)
 
 	for (int row = 0; row < image.rows; row++) {
 		for (int col = 0; col < image.cols; col++) {
-			float newValue = -1;
+			double newBlue = 0.0;
+			double newGreen = 0.0;
+			double newRed = 0.0;
+
+			Vec3b pixel = image.at<Vec3b>(row, col);
+			double blue = pixel.val[0];
+			double green = pixel.val[1];
+			double red = pixel.val[2];
+			// ^^^ this is how you get the color info
 
 			for (int i = 0; i < 5; i++) {
 				for (int j = 0; j < 5; j++) {
 
+					// TODO implement this
+					
 
 
 
