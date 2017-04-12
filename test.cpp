@@ -3,7 +3,7 @@
 #include <opencv2/highgui.hpp>
 #include <iostream>
 
-#include "guassian_blur.h"
+#include "gaussian_blur.h"
 
 using namespace cv;
 using namespace std;
@@ -26,13 +26,17 @@ int main(int argc, char** argv)
 	}
 
 
-	Mat new_image = guassian_blur(image);
-
-
+	Mat new_image = gaussian_blur(image);
+	new_image = gaussian_blur(new_image);
+	new_image = gaussian_blur(new_image);
+	new_image = gaussian_blur(new_image);
+	new_image = gaussian_blur(new_image);
+	new_image = gaussian_blur(new_image);
 
 
 	namedWindow("Display window", WINDOW_AUTOSIZE); // Create a window for display.
-	imshow("Display window", image); // Show our image inside it.
+	//imshow("Display window", image); // Show our image inside it.
+	imshow("Display window", new_image);
 
 	waitKey(0); // Wait for a keystroke in the window
 	return 0;
