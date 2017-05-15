@@ -29,6 +29,7 @@ Mat gaussian_blur(Mat image)
 			// double red = pixel.val[2];
 			// ^^^ this is how you get the color info
 
+			// TODO get rid of literal 25
 			double toBeSummedBlue[25];
 			double toBeSummedGreen[25];
 			double toBeSummedRed[25];
@@ -43,6 +44,7 @@ Mat gaussian_blur(Mat image)
 				for (int j = 0; j < 5; j++) {
 
 					// TODO fix this bit so it uses the edge values instead of going out of bounds
+					// CLAMP THEM
 					if (tempRow + i >= image.rows || tempCol + j >= image.cols) {
 						continue;
 					}
@@ -73,11 +75,24 @@ Mat gaussian_blur(Mat image)
 		}
 	}
 
-	// TODO return the new image
-
-
-
-	
+	// return the new image
 	return newImage;
 }
 
+
+
+
+
+Mat GPU_gaussian_blur(cv::Mat image) {
+
+
+
+
+
+
+
+
+
+	return image;
+
+}
